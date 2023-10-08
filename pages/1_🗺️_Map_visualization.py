@@ -7,7 +7,7 @@ from folium.features import CustomIcon
 # Загрузка данных
 @st.cache_resource
 def load_data():
-    data = pd.read_csv("C:\\Users\\trrak\\OneDrive\\Рабочий стол\\streamlit map\\data\\data.tsv", sep='\t')
+    data = pd.read_csv("data/data.tsv", sep='\t')
     return data
 
 def get_declension_word(n):

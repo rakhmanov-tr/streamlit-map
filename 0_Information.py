@@ -23,7 +23,7 @@ def load_css(file_name: str):
     with open(file_name, "r") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("styles\\by_width.css")
+load_css("styles/by_width.css")
 
 # Title
 st.title('Community curated database of oil metagenomes')
@@ -50,6 +50,6 @@ st.write(
 
 left_col, center_col1, center_col2, center_col3, right_col = st.columns([1,1,1,1,1])
 
-left_col.image(Image.open('assets\\logo\\scamt.png'), width=100)
-center_col2.image(Image.open('assets\\logo\\agni.png'), width=100)
-right_col.image(Image.open('assets\\logo\\tatneft.png'), width=100)
+left_col.image(Image.open('assets/logo/scamt.png'), width=100)
+center_col2.image(Image.open('assets/logo/agni.png'), width=100)
+right_col.image(Image.open('assets/logo/tatneft.png'), width=100)
