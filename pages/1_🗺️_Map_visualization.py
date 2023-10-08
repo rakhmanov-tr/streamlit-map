@@ -57,7 +57,7 @@ for _, row in filtered_data.iterrows():
     popup = folium.Popup(popup_content, max_width=300)
 
     icon = CustomIcon(
-        icon_image="assets\\marker\\oil_marker.png",  # Замените на URL или локальный путь к вашей картинке маркера
+        icon_image="assets/marker/oil_marker.png",  # Замените на URL или локальный путь к вашей картинке маркера
         icon_size=(30, 30)  # Установите размер иконки в зависимости от размеров вашей картинки
     )
 
