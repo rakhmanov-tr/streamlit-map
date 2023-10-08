@@ -1,7 +1,6 @@
 streamlit==1.27.2
 Pillow==10.0.0
 streamlit-extras==0.3.4
-random
 pandas==1.4.4
 folium==0.14.0
 streamlit-folium==0.15.0
