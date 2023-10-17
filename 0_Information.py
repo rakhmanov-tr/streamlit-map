@@ -50,6 +50,6 @@ st.write(
 
 left_col, center_col1, center_col2, center_col3, right_col = st.columns([1,1,1,1,1])
 
-left_col.image(Image.open('assets/logo/scamt.png'), width=100)
-center_col2.image(Image.open('assets/logo/agni.png'), width=100)
-right_col.image(Image.open('assets/logo/tatneft.png'), width=100)
+left_col.image(Image.open('assets/logo/pish.png'), width=100)
+center_col2.image(Image.open('assets/logo/tatneft.png'), width=100)
+right_col.image(Image.open('assets/logo/agni.png'), width=100)
