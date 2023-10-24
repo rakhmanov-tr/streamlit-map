@@ -30,6 +30,13 @@ def filter_column_like_depth(df, column_name, display_name=None):
     
     min_value = df[column_name].replace(['None', 'unknown'], np.nan).dropna().astype(float).min()
     max_value = df[column_name].replace(['None', 'unknown'], np.nan).dropna().astype(float).max()
+    
+    if pd.isna(min_value) or pd.isna(max_value):
+        return df  # return original dataframe if min or max is NaN
+
+    if min_value == max_value:
+        return df  # return original dataframe if min == max
+
     selected_values = st.sidebar.slider(display_name, float(min_value), float(max_value), (float(min_value), float(max_value)))
 
     include_none = st.sidebar.checkbox(f'Include None in {display_name}', value=True)
@@ -48,13 +55,21 @@ def filter_column_like_depth(df, column_name, display_name=None):
 def filter_column_like_api(df, column_name, display_name=None):
     # Если display_name не предоставлено, используем column_name
     display_name = display_name or column_name
-    
-    # Преобразование в числовой формат, где это возможно
+
     df_temp = df[column_name].replace(['None', 'unknown'], np.nan).dropna()
     df_temp = pd.to_numeric(df_temp, errors='coerce')
     
-    min_value = int(df_temp.min())
-    max_value = int(df_temp.max())
+    min_value = df_temp.min()
+    max_value = df_temp.max()
+    
+    if pd.isna(min_value) or pd.isna(max_value):
+        return df  # return original dataframe if min or max is NaN
+
+    if min_value == max_value:
+        return df  # return original dataframe if min == max
+    
+    min_value = int(min_value)
+    max_value = int(max_value)
 
     selected_values = st.sidebar.slider(display_name, min_value, max_value, (min_value, max_value))
 
@@ -140,6 +155,8 @@ df = filter_column_like_geo('archive', selected_process)
 n_samples = len(df)  # Используется df вместо filtered_data
 verb = "was" if n_samples == 1 else "were"
 st.write(f'{n_samples} {get_declension_word(n_samples)} {verb} selected')
+
+df['publication_year'] = df['publication_year'].astype(str)
 
 # Отображение данных
 st.dataframe(df)
