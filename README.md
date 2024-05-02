@@ -1,3 +1,3 @@
 # streamlit-map
-Web [oilmetagenome.streamlit.app/](oilmetagenome.streamlit.app/) \
+Web https://oilmetagenome.streamlit.app/ \
 Project https://github.com/agni-bioinformatics-lab/OilMetagenomesDB
